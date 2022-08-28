@@ -1,0 +1,51 @@
+{
+  "name": "vale/addon-drive",
+  "description": "Move Google Drive files between folders",
+  "keywords": [
+    "Google Drive",
+    "Google Drive files",
+    "move files"
+  ],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Vale",
+      "email": "valesopia@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "google/apiclient": "^2.12.1"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.4.4",
+    "fakerphp/faker": "^1.9.1",
+    "phpunit/phpunit": "^9.5.10",
+    "orchestra/testbench": "^6.25"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vale\\Addons\\Drive\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Vale\\Addons\\Drive\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Vale\\Addons\\Drive\\DriveProvider"
+      ]
+    },
+    "google/apiclient-services": [
+      "Drive"
+    ]
+  }
+}
